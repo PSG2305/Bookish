@@ -1,0 +1,76 @@
+.container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  color: #555;
+  transition: 0.2s ease;
+}
+
+.tab:hover {
+  background-color: #e0e0e0;
+}
+
+.active-tab {
+  background: linear-gradient(to right, #004b8d, #0073b1);
+  color: white;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #222;
+}
+
+.btn-primary {
+  padding: 10px;
+  background: linear-gradient(to right, #004b8d, #0073b1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #005a99;
+}
+.link {
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+}

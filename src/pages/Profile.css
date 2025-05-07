@@ -1,5 +1,5 @@
-/* Container */
-.container {
+/* Profile Page Container */
+.profile-container {
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
@@ -11,7 +11,7 @@
   transition: 0.3s ease;
 }
 
-.container:hover {
+.profile-container:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -74,40 +74,22 @@
   margin-top: 5px;
 }
 
-/* Section Layout */
-.section {
-  margin-top: 25px;
-  padding: 20px;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-left: 5px solid #0073b1;
+.username-input {
+  font-size: 24px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-.section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+/* Bookshelves Section */
+.profile-shelves {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.section h2 {
-  font-size: 20px;
-  color: #0073b1;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
-  margin-bottom: 16px;
-}
-
-/* Bookshelves Grid */
-.bookshelves {
-  display: grid; /* Grid layout for bookshelves */
-  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-  gap: 20px; /* Adds space between columns */
-  padding: 20px;
-  justify-items: center;
-}
-
-/* Individual Shelf */
+/* Shelf Layout */
 .shelf {
   background: #f2f9fc;
   padding: 15px;
@@ -119,15 +101,32 @@
   transition: 0.2s;
 }
 
-/* Shelf Hover Effect */
 .shelf:hover {
   background: #e6f3fb;
   transform: scale(1.02);
 }
 
-/* Books within Shelf */
-.shelf img {
-  width: 70px; /* Book cover size */
+.shelf h3 {
+  font-size: 18px;
+  color: #0073b1;
+  margin-bottom: 10px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-cover {
+  width: 70px;
   height: 100px;
   object-fit: cover;
   border-radius: 6px;
@@ -135,43 +134,41 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust titles and buttons */
-.shelf h3 {
-  font-size: 16px;
-  color: #0073b1;
-  margin-bottom: 10px;
-}
-
-.shelf p {
-  margin: 0;
-  font-size: 14px;
-  color: #555;
-}
-
-/* Book Cover Hover Effect */
-.shelf:hover img {
-  transform: scale(1.05);
-}
-
-/* Quotes & Friends */
-.info {
-  color: #444;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.link {
-  color: #0073b1;
-  font-weight: 500;
+.actions button {
+  margin: 4px 0;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #0073b1;
+  color: #fff;
   cursor: pointer;
 }
 
-.link:hover {
-  text-decoration: underline;
+.actions button:hover {
+  background: #005b90;
 }
 
-/* Year in Books */
-.year-in-books {
+/* Add Book Dropdown */
+.add-book select {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Friends Section */
+.profile-friends {
+  margin-top: 40px;
+}
+
+.profile-friends h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Year in Books Section */
+.profile-year {
   background: #0073b1;
   color: white;
   padding: 20px;
@@ -180,32 +177,27 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
-.year-in-books h2 {
+.profile-year h2 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-.year-in-books p {
+.profile-year p {
   font-size: 14px;
   margin-top: 5px;
 }
 
-/* "+" Upload Symbol */
-.plus {
-  font-size: 36px;
-  color: #0073b1;
-  font-weight: bold;
+.link {
+  color: #ffffff;
+  font-weight: 500;
   cursor: pointer;
 }
 
-/* Cursor effect on profile pic */
-.profile-pic:hover {
-  opacity: 0.9;
-  box-shadow: 0 0 0 2px #0073b1;
-  transition: 0.2s ease;
+.link:hover {
+  text-decoration: underline;
 }
 
-/* Navbar */
+/* Optional Navbar (if applicable) */
 .navbar {
   background-color: #0073b1;
   color: white;
