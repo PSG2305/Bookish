@@ -6,6 +6,7 @@ const multer = require("multer");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const cloudinary = require("cloudinary").v2;
 
 const app = express();
 app.use(cors());
@@ -59,6 +60,15 @@ const discussionSchema = new mongoose.Schema({
   replies: [replySchema],
 });
 const Discussion = mongoose.model("Discussion", discussionSchema);
+
+// ------------------------
+// Cloudinary Configuration
+// ------------------------
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
 // ------------------------
 // JWT Authentication Middleware
@@ -143,10 +153,11 @@ app.post(
   upload.single("profilePic"),
   async (req, res) => {
     try {
+      const result = await cloudinary.uploader.upload(req.file.path);
       const user = await User.findOne({ userid: req.params.id });
       if (!user) return res.status(404).json({ message: "User not found" });
 
-      user.profilePic = `uploads/${req.file.filename}`;
+      user.profilePic = result.secure_url;
       await user.save();
       res.json({ message: "Upload successful", filePath: user.profilePic });
     } catch (err) {
