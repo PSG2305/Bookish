@@ -26,7 +26,8 @@ const Profile = () => {
         });
         const data = await res.json();
         if (res.ok) {
-          setImage(`http://localhost:5000/${data.profilePic}`);
+          setImage(data.profilePic);
+          //setImage(`http://localhost:5000/${data.profilePic}`);
           setUsername(data.username || "");
         } else {
           console.error(data.message);
@@ -89,7 +90,8 @@ const Profile = () => {
       });
       const data = await res.json();
       if (res.ok) {
-        setImage(`http://localhost:5000/${data.filePath}`);
+        setImage(data.filePath);
+        //setImage(`http://localhost:5000/${data.filePath}`);
       }
     } catch {
       alert("Error uploading image.");
